@@ -1,5 +1,5 @@
-import { useThemeContext } from 'common/context/Theme.context'
-import { Moon } from 'react-feather'
+import { useThemeContext } from '@contexts/Theme.context'
+import { Moon, Sun } from 'react-feather'
 
 export const ToggleTheme = () => {
   const { theme, setTheme } = useThemeContext()
@@ -11,8 +11,8 @@ export const ToggleTheme = () => {
   }
 
   return (
-    <button onClick={toggleTheme}>
-      <Moon />
+    <button onClick={toggleTheme} className="flex gap-2">
+      {theme === 'light' ? <Sun /> : <Moon />}
       <span>{themeText} Mode</span>
     </button>
   )

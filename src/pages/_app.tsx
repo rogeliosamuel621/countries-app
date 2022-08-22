@@ -1,5 +1,6 @@
-import { ThemeProvider } from 'common/context/Theme.context'
+import { ThemeProvider } from '@contexts/Theme.context'
 import { AppProps } from 'next/app'
+import 'tailwindcss/tailwind.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
