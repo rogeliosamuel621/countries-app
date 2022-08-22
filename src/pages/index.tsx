@@ -1,5 +1,7 @@
+import { HomeView } from '@modules/Home/HomeView'
+
 const Home = () => {
-  return <h1>Hello world</h1>
+  return <HomeView />
 }
 
 export default Home
