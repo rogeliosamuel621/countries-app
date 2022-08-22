@@ -6,7 +6,14 @@ module.exports = {
     './src/modules/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
-    extend: {}
+    extend: {
+      colors: {
+        'bg-light-1': '#FFFFFF',
+        'bg-light-2': '#FAFAFA',
+        'bg-dark-1': '#2A3743',
+        'bg-dark-2': '#1F2C37'
+      }
+    }
   },
   plugins: [],
   darkMode: 'class'
