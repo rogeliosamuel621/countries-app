@@ -1,3 +1,4 @@
+import { ToggleTheme } from '@components/atoms/ToggleTheme'
 import Link from 'next/link'
 
 export const Header = () => {
@@ -6,6 +7,7 @@ export const Header = () => {
       <div>
         <Link href="/">Where in the world?</Link>
       </div>
+      <ToggleTheme />
     </header>
   )
 }

@@ -1,5 +1,5 @@
 import { IThemeContextValue, TTheme } from '@interfaces/context/theme.interface'
-import { createContext, FC, PropsWithChildren, useEffect, useState } from 'react'
+import { createContext, FC, PropsWithChildren, useContext, useEffect, useState } from 'react'
 
 const ThemeContext = createContext<IThemeContextValue>({
   theme: 'light',
@@ -16,4 +16,4 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
   )
 }
 
-export {}
+export const useThemeContext = () => useContext(ThemeContext)
