@@ -1,5 +1,5 @@
-import { Moon } from '@components/icons/Moon'
 import { useThemeContext } from 'common/context/Theme.context'
+import { Moon } from 'react-feather'
 
 export const ToggleTheme = () => {
   const { theme, setTheme } = useThemeContext()
