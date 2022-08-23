@@ -1,4 +1,4 @@
-import { Searcher } from '@components/molecules/Searcher'
+import { Searcher } from '../molecules/Searcher'
 
 export const Actions = () => {
   return (
