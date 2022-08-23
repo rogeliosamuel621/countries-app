@@ -5,7 +5,6 @@ import useMedia from 'use-media'
 
 export const ToggleTheme = () => {
   const { theme, color, setTheme } = useThemeContext()
-  const isMobile = useMedia(mediaTo640)
   const themeText = theme === 'light' ? 'Light Mode' : 'Dark Mode'
 
   const toggleTheme = () => {

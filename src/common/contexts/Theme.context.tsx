@@ -13,7 +13,7 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <ThemeContext.Provider value={{ theme, color, setTheme }}>
-      <div className={theme}>{children}</div>
+      <div className={`${theme}`}>{children}</div>
     </ThemeContext.Provider>
   )
 }
