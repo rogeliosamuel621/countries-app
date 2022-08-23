@@ -14,9 +14,9 @@ export const ToggleTheme = () => {
   }
 
   return (
-    <button onClick={toggleTheme} className="flex gap-2">
-      {theme === 'light' ? <Sun color={color} /> : <Moon color={color} />}
-      <span className="text-dark-1 dark:text-light-1">{isMobile ? '' : themeText}</span>
+    <button onClick={toggleTheme} className="flex gap-1 items-center">
+      {theme === 'light' ? <Sun size={18} color={color} /> : <Moon size={18} color={color} />}
+      <span className="text-dark-1 dark:text-light-1 text-xs">{themeText}</span>
     </button>
   )
 }
