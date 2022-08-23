@@ -15,8 +15,12 @@ export const ToggleTheme = () => {
 
   return (
     <button onClick={toggleTheme} className="flex gap-1 items-center">
-      {theme === 'light' ? <Sun size={18} color={color} /> : <Moon size={18} color={color} />}
-      <span className="text-dark-1 dark:text-light-1 text-xs">{themeText}</span>
+      {theme === 'light' ? (
+        <Sun size={18} color={color} className="transition" />
+      ) : (
+        <Moon size={18} color={color} className="transition" />
+      )}
+      <span className="text-dark-1 dark:text-light-1 text-xs transition">{themeText}</span>
     </button>
   )
 }
