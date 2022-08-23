@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -14,6 +16,9 @@ module.exports = {
         'dark-2': '#1F2C37',
         fLight: '#111517',
         fDark: '#FFFFFF'
+      },
+      fontFamily: {
+        sans: ['Nunito Sans', ...defaultTheme.fontFamily.sans]
       }
     }
   },
