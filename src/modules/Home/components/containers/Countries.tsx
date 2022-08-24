@@ -2,7 +2,7 @@ import { Country } from '../molecules/Country'
 
 export const Countries = () => {
   return (
-    <section className="flex flex-col gap-4">
+    <section className="flex flex-col gap-4 mt-7">
       <Country
         image="https://flagcdn.com/cn.svg"
         name="China"

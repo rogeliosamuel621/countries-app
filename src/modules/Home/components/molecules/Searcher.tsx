@@ -5,7 +5,7 @@ export const Searcher = () => {
   const { color } = useThemeContext()
 
   return (
-    <div className="flex bg-light-1 dark:bg-dark-1 p-4 gap-3 rounded shadow-lg w-full transition">
+    <div className="flex bg-light-1 dark:bg-dark-1 px-4 py-3 gap-3 rounded shadow-lg w-full transition">
       <div>
         <Search size={20} color={color} strokeWidth={3.5} className="transition" />
       </div>
