@@ -17,31 +17,37 @@ export const FilterProvider: FC<PropsWithChildren<Props>> = ({ countries, childr
   const [filter, setFilter] = useState<TFilters>('region')
   const [currentCountries, setCurrentCountries] = useState<ICountry[]>(countries)
 
+  const filterByRegion = () => {
+    const americanCountries = countries.filter(
+      (country) => country.region.toLocaleLowerCase() === 'americas'
+    )
+    const asianCountries = countries.filter(
+      (country) => country.region.toLocaleLowerCase() === 'asia'
+    )
+    const africanCountries = countries.filter(
+      (country) => country.region.toLocaleLowerCase() === 'africa'
+    )
+    const europeanCountries = countries.filter(
+      (country) => country.region.toLocaleLowerCase() === 'europe'
+    )
+    const oceanianCountries = countries.filter(
+      (country) => country.region.toLocaleLowerCase() === 'oceania'
+    )
+
+    const newCountries = [
+      ...americanCountries,
+      ...asianCountries,
+      ...africanCountries,
+      ...europeanCountries,
+      ...oceanianCountries
+    ]
+
+    return newCountries
+  }
+
   useEffect(() => {
     if (filter === 'region') {
-      const americanCountries = countries.filter(
-        (country) => country.region.toLocaleLowerCase() === 'americas'
-      )
-      const asianCountries = countries.filter(
-        (country) => country.region.toLocaleLowerCase() === 'asia'
-      )
-      const africanCountries = countries.filter(
-        (country) => country.region.toLocaleLowerCase() === 'africa'
-      )
-      const europeanCountries = countries.filter(
-        (country) => country.region.toLocaleLowerCase() === 'europe'
-      )
-      const oceanianCountries = countries.filter(
-        (country) => country.region.toLocaleLowerCase() === 'oceania'
-      )
-
-      const newCountries = [
-        ...americanCountries,
-        ...asianCountries,
-        ...africanCountries,
-        ...europeanCountries,
-        ...oceanianCountries
-      ]
+      const newCountries = filterByRegion()
 
       setCurrentCountries(newCountries)
       return
@@ -54,9 +60,16 @@ export const FilterProvider: FC<PropsWithChildren<Props>> = ({ countries, childr
   }, [filter])
 
   useEffect(() => {
-    if (!query) return
+    if (!query) {
+      const newCountries = filterByRegion()
+      setCurrentCountries(newCountries)
+      return
+    }
 
-    const newCountries = countries.filter((country) => country.name.common === query)
+    const newCountries = countries.filter((country) => {
+      return country.name.common.toLocaleLowerCase().includes(query.toLocaleLowerCase())
+    })
+
     setCurrentCountries(newCountries)
   }, [query])
 
