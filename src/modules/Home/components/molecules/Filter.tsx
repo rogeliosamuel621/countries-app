@@ -12,7 +12,7 @@ export const Filter = () => {
       <Menu.Button className="h-12 pl-4 w-52 text-xs text-black dark:text-white text-left transition">
         {filterText}
       </Menu.Button>
-      <div className="fixed">
+      <div className="fixed z-10">
         <Transition
           as={Fragment}
           enter="transition ease-out duration-100"
@@ -22,7 +22,7 @@ export const Filter = () => {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
-          <Menu.Items className="flex flex-col bg-light-1 dark:bg-dark-1 mt-1 rounded">
+          <Menu.Items className="flex flex-col bg-light-1 dark:bg-dark-1 mt-1 rounded shadow-lg">
             <Menu.Item as="article">
               {({ active }) => (
                 <button
