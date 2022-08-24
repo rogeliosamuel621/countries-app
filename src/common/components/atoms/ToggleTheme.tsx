@@ -19,7 +19,9 @@ export const ToggleTheme = () => {
       ) : (
         <Moon size={18} color={color} className="transition" />
       )}
-      <span className="text-dark-1 dark:text-light-1 text-xs transition">{themeText}</span>
+      <span className="text-dark-1 dark:text-light-1 text-xs font-light transition">
+        {themeText}
+      </span>
     </button>
   )
 }
