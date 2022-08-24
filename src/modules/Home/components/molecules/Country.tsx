@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
@@ -8,14 +9,16 @@ export const Country: FC<Props> = ({ image, name, population, region, capital })
       <Link href={`countries/${name}`}>
         <a>
           <div>
-            <Image
+            {/* <Image
               src={image}
               alt={name}
               layout="responsive"
               width={900}
               height={600}
               className="rounded-t"
-            />
+              loading="lazy"
+            /> */}
+            <img src={image} alt={name} />
           </div>
           <div className="p-4">
             <span className="text-black dark:text-white transition">
