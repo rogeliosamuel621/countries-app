@@ -1,3 +1,4 @@
+import { Header } from '@components/containers/Header'
 import { ThemeProvider } from '@contexts/Theme.context'
 import { AppProps } from 'next/app'
 import 'tailwindcss/tailwind.css'
@@ -5,21 +6,12 @@ import 'tailwindcss/tailwind.css'
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider>
-      <Component {...pageProps} />
+      <Header />
+      <div className="bg-light-2 dark:bg-dark-2 transition">
+        <Component {...pageProps} />
+      </div>
     </ThemeProvider>
   )
 }
-
-// Only uncomment this method if you have blocking data requirements for
-// every single page in your application. This disables the ability to
-// perform automatic static optimization, causing every page in your app to
-// be server-side rendered.
-//
-// MyApp.getInitialProps = async (appContext) => {
-//   // calls page's `getInitialProps` and fills `appProps.pageProps`
-//   const appProps = await App.getInitialProps(appContext);
-//
-//   return { ...appProps }
-// }
 
 export default MyApp

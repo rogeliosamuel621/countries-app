@@ -8,8 +8,8 @@ export const Filter = () => {
   const filterText = getFilterText(filter)
 
   return (
-    <Menu as="div" className="bg-light-1 dark:bg-dark-1 rounded w-fit">
-      <Menu.Button className="h-12 pl-4 w-52 text-xs text-black dark:text-white text-left">
+    <Menu as="div" className="bg-light-1 dark:bg-dark-1 rounded w-fit transition">
+      <Menu.Button className="h-12 pl-4 w-52 text-xs text-black dark:text-white text-left transition">
         {filterText}
       </Menu.Button>
       <div className="fixed">
@@ -27,7 +27,7 @@ export const Filter = () => {
               {({ active }) => (
                 <button
                   onClick={() => setFilter('region')}
-                  className={`text-start text-xs text-black dark:text-white pl-4 w-52 py-3 ${
+                  className={`text-start text-xs text-black dark:text-white pl-4 w-52 py-3 transition ${
                     active && 'bg-[#3A4B5B]'
                   }`}
                 >
@@ -39,7 +39,7 @@ export const Filter = () => {
               {({ active }) => (
                 <button
                   onClick={() => setFilter('africa')}
-                  className={`text-start text-xs text-black dark:text-white pl-4 w-52 py-3 ${
+                  className={`text-start text-xs text-black dark:text-white pl-4 w-52 py-3 transition ${
                     active && 'bg-[#3A4B5B]'
                   }`}
                 >
@@ -51,7 +51,7 @@ export const Filter = () => {
               {({ active }) => (
                 <button
                   onClick={() => setFilter('america')}
-                  className={`text-start text-xs text-black dark:text-white pl-4 w-52 py-3 ${
+                  className={`text-start text-xs text-black dark:text-white pl-4 w-52 py-3 transition ${
                     active && 'bg-[#3A4B5B]'
                   }`}
                 >
@@ -63,7 +63,7 @@ export const Filter = () => {
               {({ active }) => (
                 <button
                   onClick={() => setFilter('asia')}
-                  className={`text-start text-xs text-black dark:text-white pl-4 w-52 py-3 ${
+                  className={`text-start text-xs text-black dark:text-white pl-4 w-52 py-3 transition ${
                     active && 'bg-[#3A4B5B]'
                   }`}
                 >
@@ -75,7 +75,7 @@ export const Filter = () => {
               {({ active }) => (
                 <button
                   onClick={() => setFilter('europe')}
-                  className={`text-start text-xs text-black dark:text-white pl-4 w-52 py-3 ${
+                  className={`text-start text-xs text-black dark:text-white pl-4 w-52 py-3 transition ${
                     active && 'bg-[#3A4B5B]'
                   }`}
                 >
@@ -87,7 +87,7 @@ export const Filter = () => {
               {({ active }) => (
                 <button
                   onClick={() => setFilter('oceania')}
-                  className={`text-start text-xs text-black dark:text-white pl-4 w-52 py-3 ${
+                  className={`text-start text-xs text-black dark:text-white pl-4 w-52 py-3 transition ${
                     active && 'bg-[#3A4B5B]'
                   }`}
                 >
