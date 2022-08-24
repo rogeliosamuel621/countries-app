@@ -2,7 +2,6 @@ import { ICountry } from '@interfaces/api/country.interface'
 import { HomeView } from '@modules/Home/HomeView'
 import { getAllCountries } from 'common/api/contry.api'
 import { GetStaticProps } from 'next'
-import { type } from 'os'
 import { FC } from 'react'
 
 const Home: FC<Props> = ({ countries }) => {
