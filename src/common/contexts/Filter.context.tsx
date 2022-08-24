@@ -2,7 +2,7 @@
 import { ICountry } from '@interfaces/api/country.interface'
 import { IFilterContextValue } from '@interfaces/context/filter.interface'
 import { TFilters } from '@modules/Home/interface/filter.interface'
-import { createContext, FC, PropsWithChildren, useEffect, useState } from 'react'
+import { createContext, FC, PropsWithChildren, useContext, useEffect, useState } from 'react'
 
 const FilterContext = createContext<IFilterContextValue>({
   query: '',
@@ -19,11 +19,21 @@ export const FilterProvider: FC<PropsWithChildren<Props>> = ({ countries, childr
 
   useEffect(() => {
     if (filter === 'region') {
-      const americanCountries = currentCountries.filter((country) => country.region === 'america')
-      const asianCountries = currentCountries.filter((country) => country.region === 'asia')
-      const africanCountries = currentCountries.filter((country) => country.region === 'africa')
-      const europeanCountries = currentCountries.filter((country) => country.region === 'europe')
-      const oceanianCountries = currentCountries.filter((country) => country.region === 'oceania')
+      const americanCountries = countries.filter(
+        (country) => country.region.toLocaleLowerCase() === 'americas'
+      )
+      const asianCountries = countries.filter(
+        (country) => country.region.toLocaleLowerCase() === 'asia'
+      )
+      const africanCountries = countries.filter(
+        (country) => country.region.toLocaleLowerCase() === 'africa'
+      )
+      const europeanCountries = countries.filter(
+        (country) => country.region.toLocaleLowerCase() === 'europe'
+      )
+      const oceanianCountries = countries.filter(
+        (country) => country.region.toLocaleLowerCase() === 'oceania'
+      )
 
       const newCountries = [
         ...americanCountries,
@@ -37,12 +47,16 @@ export const FilterProvider: FC<PropsWithChildren<Props>> = ({ countries, childr
       return
     }
 
-    const newCountries = currentCountries.filter((country) => country.region === filter)
+    const newCountries = countries.filter(
+      (country) => country.region.toLocaleLowerCase() === filter
+    )
     setCurrentCountries(newCountries)
   }, [filter])
 
   useEffect(() => {
-    const newCountries = currentCountries.filter((country) => country.name.common === query)
+    if (!query) return
+
+    const newCountries = countries.filter((country) => country.name.common === query)
     setCurrentCountries(newCountries)
   }, [query])
 
@@ -60,6 +74,8 @@ export const FilterProvider: FC<PropsWithChildren<Props>> = ({ countries, childr
     </FilterContext.Provider>
   )
 }
+
+export const useFilterContext = () => useContext(FilterContext)
 
 type Props = {
   countries: ICountry[]

@@ -1,10 +1,11 @@
+import { useFilterContext } from '@contexts/Filter.context'
 import { Menu, Transition } from '@headlessui/react'
 import { getFilterText } from '@modules/Home/helpers/filter.helper'
 import { TFilters } from '@modules/Home/interface/filter.interface'
 import { Fragment, useState } from 'react'
 
 export const Filter = () => {
-  const [filter, setFilter] = useState<TFilters>('region')
+  const { filter, setFilter } = useFilterContext()
   const filterText = getFilterText(filter)
 
   return (
@@ -50,12 +51,12 @@ export const Filter = () => {
             <Menu.Item as="article">
               {({ active }) => (
                 <button
-                  onClick={() => setFilter('america')}
+                  onClick={() => setFilter('americas')}
                   className={`text-start text-xs text-black dark:text-white pl-4 w-52 py-3 transition ${
                     active && 'bg-[#3A4B5B]'
                   }`}
                 >
-                  {getFilterText('america')}
+                  {getFilterText('americas')}
                 </button>
               )}
             </Menu.Item>

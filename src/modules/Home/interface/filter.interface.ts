@@ -1,1 +1,1 @@
-export type TFilters = 'region' | 'africa' | 'america' | 'asia' | 'europe' | 'oceania'
+export type TFilters = 'region' | 'africa' | 'americas' | 'asia' | 'europe' | 'oceania'

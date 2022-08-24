@@ -1,3 +1,5 @@
+import { TFilters } from '@modules/Home/interface/filter.interface'
+
 export interface ICountry {
   flags: {
     png: string
@@ -12,7 +14,7 @@ export interface ICountry {
   cca3: string
   currencies: { KWD: { name: string; symbol: string } }
   capital: string[]
-  region: string
+  region: TFilters
   subregion: string
   languages: { ara: string }
   borders: string[]
