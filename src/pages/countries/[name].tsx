@@ -1,8 +1,17 @@
+import { CountryView } from '@modules/Country/CountryView'
+import { IUniqueCountry } from '@modules/Country/interfaces/country.interface'
 import { getAllCountries, getCountryByName } from 'common/api/contry.api'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { ParsedUrlQuery } from 'querystring'
+import { FC } from 'react'
 
-export const CountryPage = () => {}
+const CountryPage: FC<Props> = ({ country }) => {
+  console.log({
+    country
+  })
+
+  return <CountryView country={country} />
+}
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const allCountries = await getAllCountries()
@@ -18,7 +27,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
-  const { name } = ctx as TParams
+  const { name } = ctx.params as TParams
   const country = await getCountryByName(name)
 
   return {
@@ -31,3 +40,9 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 type TParams = ParsedUrlQuery & {
   name: string
 }
+
+type Props = {
+  country: IUniqueCountry
+}
+
+export default CountryPage

@@ -1,4 +1,5 @@
 import { ICountry } from '@interfaces/api/country.interface'
+import { IUniqueCountry } from '@modules/Country/interfaces/country.interface'
 import { getApi } from './api.api'
 
 export const getAllCountries = async (): Promise<ICountry[] | never[]> => {
@@ -14,11 +15,11 @@ export const getAllCountries = async (): Promise<ICountry[] | never[]> => {
   }
 }
 
-export const getCountryByName = async (name: string): Promise<ICountry | null> => {
+export const getCountryByName = async (name: string): Promise<IUniqueCountry | null> => {
   try {
-    const response = await getApi<ICountry>(`name/${name}`)
+    const response = await getApi<IUniqueCountry[]>(`name/${name}`)
 
-    return response.data
+    return response.data[0]
   } catch (error) {
     console.log(error)
     return null
