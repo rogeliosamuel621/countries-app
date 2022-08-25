@@ -7,6 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "test": "echo 'works'",
     "prepare": "husky install",
     "format": "prettier --write ./src",
     "lint": "eslint ./src",
