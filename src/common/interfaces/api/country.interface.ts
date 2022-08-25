@@ -1,5 +1,3 @@
-import { TFilters } from '@modules/Home/interface/filter.interface'
-
 export interface ICountry {
   flags: {
     png: string
@@ -8,7 +6,7 @@ export interface ICountry {
   name: {
     common: string
     official: string
-    nativeName: { ara: [Object] }
+    nativeName: { ara: [object] }
   }
   tld: string[]
   cca3: string

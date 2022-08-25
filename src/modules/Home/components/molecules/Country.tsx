@@ -5,7 +5,7 @@ import { FC, useRef } from 'react'
 
 export const Country: FC<Props> = ({ image, name, population, region, capital }) => {
   const countryCard = useRef(null)
-  const isInViewPort = isInViewport(countryCard.current!)
+  const isInViewPort = isInViewport(countryCard.current)
 
   return (
     <article

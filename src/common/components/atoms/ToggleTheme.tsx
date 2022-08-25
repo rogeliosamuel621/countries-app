@@ -1,7 +1,5 @@
 import { useThemeContext } from '@contexts/Theme.context'
-import { mediaTo640 } from '@helpers/media-queries.helpers'
 import { Moon, Sun } from 'react-feather'
-import useMedia from 'use-media'
 
 export const ToggleTheme = () => {
   const { theme, color, setTheme } = useThemeContext()

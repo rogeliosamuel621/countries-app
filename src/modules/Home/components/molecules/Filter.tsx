@@ -1,8 +1,7 @@
 import { useFilterContext } from '@contexts/Filter.context'
 import { Menu, Transition } from '@headlessui/react'
 import { getFilterText } from '@modules/Home/helpers/filter.helper'
-import { TFilters } from '@modules/Home/interface/filter.interface'
-import { Fragment, useState } from 'react'
+import { Fragment } from 'react'
 
 export const Filter = () => {
   const { filter, setFilter } = useFilterContext()

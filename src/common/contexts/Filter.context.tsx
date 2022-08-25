@@ -8,8 +8,8 @@ const FilterContext = createContext<IFilterContextValue>({
   query: '',
   filter: 'region',
   currentCountries: [],
-  setQuery: () => {},
-  setFilter: () => {}
+  setQuery: () => null,
+  setFilter: () => null
 })
 
 export const FilterProvider: FC<PropsWithChildren<Props>> = ({ countries, children }) => {
