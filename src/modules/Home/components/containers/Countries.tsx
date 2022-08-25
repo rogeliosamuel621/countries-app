@@ -6,7 +6,7 @@ import { Country } from '../molecules/Country'
 export const Countries: FC<Props> = () => {
   const { currentCountries } = useFilterContext()
 
-  if (!currentCountries.length) return <h1>loading</h1>
+  if (!currentCountries.length) return <h1>No countries founded</h1>
 
   return (
     <section className="flex flex-col gap-4 mt-7 lg:grid lg:grid-cols-3 lg:gap-14">

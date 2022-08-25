@@ -6,8 +6,8 @@ import 'tailwindcss/tailwind.css'
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider>
-      <Header />
-      <div className="bg-light-2 dark:bg-dark-2 transition">
+      <div className="bg-light-2 dark:bg-dark-2 transition min-h-screen">
+        <Header />
         <Component {...pageProps} />
       </div>
     </ThemeProvider>
