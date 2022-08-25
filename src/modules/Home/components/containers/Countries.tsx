@@ -1,6 +1,5 @@
 import { useFilterContext } from '@contexts/Filter.context'
 import { ICountry } from '@interfaces/api/country.interface'
-import { getFilterText } from '@modules/Home/helpers/filter.helper'
 import { FC } from 'react'
 import { Country } from '../molecules/Country'
 
