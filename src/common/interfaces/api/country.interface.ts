@@ -14,7 +14,7 @@ export interface ICountry {
   cca3: string
   currencies: { KWD: { name: string; symbol: string } }
   capital: string[]
-  region: TFilters
+  region: string
   subregion: string
   languages: { ara: string }
   borders: string[]

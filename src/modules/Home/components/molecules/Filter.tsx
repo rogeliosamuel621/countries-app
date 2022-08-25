@@ -10,7 +10,7 @@ export const Filter = () => {
 
   return (
     <Menu as="div" className="bg-light-1 dark:bg-dark-1 rounded w-fit transition">
-      <Menu.Button className="h-12 pl-4 w-52 text-xs text-black dark:text-white text-left transition">
+      <Menu.Button className="h-12 pl-4 w-52 text-xs text-black dark:text-white text-left transition md:w-40">
         {filterText}
       </Menu.Button>
       <div className="fixed z-10">

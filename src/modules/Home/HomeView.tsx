@@ -7,7 +7,7 @@ import { Countries } from './components/containers/Countries'
 export const HomeView: FC<Props> = ({ countries }) => {
   return (
     <FilterProvider countries={countries}>
-      <main className="p-5">
+      <main className="p-5 sm:mx-24">
         <Actions />
         <Countries countries={countries} />
       </main>

@@ -15,7 +15,7 @@ export const Country: FC<Props> = ({ image, name, population, region, capital })
       <Link href={`countries/${name}`}>
         <a>
           <div>
-            <img src={image} alt={name} />
+            <img src={image} alt={name} className="rounded-t-sm" />
           </div>
           <div className="p-4">
             <span className={`text-black dark:text-white ${isInViewPort && 'transition'}`}>
