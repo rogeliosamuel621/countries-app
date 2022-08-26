@@ -1,8 +1,9 @@
 import { FC } from 'react'
+import { Content } from './components/Content'
 import { IUniqueCountry } from './interfaces/country.interface'
 
 export const CountryView: FC<Props> = () => {
-  return <h1>Country</h1>
+  return <Content />
 }
 
 type Props = {
