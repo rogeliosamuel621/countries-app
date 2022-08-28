@@ -1,15 +1,12 @@
+import { ICountry } from '@interfaces/api/country.interface'
 import { CountryView } from '@modules/Country/CountryView'
-import { IUniqueCountry } from '@modules/Country/interfaces/country.interface'
 import { getAllCountries, getCountryByName } from 'common/api/contry.api'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { ParsedUrlQuery } from 'querystring'
 import { FC } from 'react'
 
 const CountryPage: FC<Props> = ({ country }) => {
-  console.log({
-    country
-  })
-
+  getCountryByName('Guatemala')
   return <CountryView country={country} />
 }
 
@@ -42,7 +39,7 @@ type TParams = ParsedUrlQuery & {
 }
 
 type Props = {
-  country: IUniqueCountry
+  country: ICountry
 }
 
 export default CountryPage
