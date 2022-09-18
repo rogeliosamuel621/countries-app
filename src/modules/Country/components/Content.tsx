@@ -4,9 +4,7 @@ import { FC } from 'react'
 export const Content: FC<Props> = ({ country }) => {
   return (
     <main>
-      <div>
-        <img src={country?.flags.svg} alt={country?.name.common} />
-      </div>
+      <div>{/* <img src={country?.flags.svg} alt={country?.name.common} /> */}</div>
       <div>
         <div>
           <p>Population: {country?.population}</p>
